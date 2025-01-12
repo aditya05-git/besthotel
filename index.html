@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEST HOTEL</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tugas.css">
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>BEST HOTEL</h1>
+    </header>
+    <!-- End Header -->
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(85, 82, 82);">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="#" onclick="changeIframe('content.html')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" onclick="changeIframe('data-kamar.html')">Kamar</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="fasilitasDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Fasilitas</a>
+                        <ul class="dropdown-menu" aria-labelledby="fasilitasDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="changeIframe('data-fasilitas.html','PetualanganAlam')">Petualangan Alam</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Kolam Renang</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" onclick="changeIframe('data-fasilitas.html','SumberAirPanas')">Sumber Air Panas</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item dropdown-toggle" href="#">Kolam Anak & Dewasa</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#" onclick="changeIframe('data-fasilitas.html','KolamReguler')">Reguler</a></li>
+                                            <li><a class="dropdown-item" href="#" onclick="changeIframe('data-fasilitas.html','KolamPremium')">Premium</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="changeIframe('data-fasilitas.html','PusatKebugaran')">Pusat Kebugaran</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeIframe('data-fasilitas.html','RuangRapat')">Ruang Rapat</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" onclick="changeIframe('FormPemesanan.html')">Pesan Sekarang</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Content -->
+    <div class="content-container">
+        <iframe id="contentFrame" src="content.html" style="width: 100%; height: 800px; border: none;"></iframe>
+    </div>
+    <!-- End Content -->
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 QUEEN BEST HOTEL</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function changeIframe(url, hash = "") {
+            const iframe = document.getElementById('contentFrame');
+            iframe.src = hash ? `${url}#${hash}` : url;
+        }
+    </script>
+</body>
+</html>

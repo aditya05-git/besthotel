@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - BEST HOTEL</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/tugas.css">
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Admin Panel - BEST HOTEL</h1>
+    </header>
+    <!-- End Header -->
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(85, 82, 82);">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="#" onclick="changeIframe('../content.html')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" onclick="changeIframe('data-pemesanan.html')">Daftar Pemesanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" onclick="changeIframe('tambah-fasilitas.html')">Tambah Fasilitas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" onclick="changeIframe('tambah-kamar.html')">Tambah Kamar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Content -->
+    <div class="content-container">
+        <iframe id="contentFrame" src="../content.html" style="width: 100%; height: 800px; border: none;"></iframe>
+    </div>
+    <!-- End Content -->
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 QUEEN BEST HOTEL - Admin Panel</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function changeIframe(url, hash = "") {
+            const iframe = document.getElementById('contentFrame');
+            iframe.src = hash ? `${url}#${hash}` : url;
+        }
+    </script>
+</body>
+</html>

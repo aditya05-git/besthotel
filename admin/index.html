@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Admin Panel</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('../gambar/hotel.jpg'); /* Ganti 'your-image.jpg' dengan URL gambar latar belakang */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            border-radius: 5px;
+            padding: 12px;
+            font-size: 16px;
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            text-align: center;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login - Admin Panel</h2>
+        <form id="loginForm" onsubmit="return validateLogin(event)">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 BEST HOTEL - Admin Panel</p>
+    </div>
+
+    <script>
+        function validateLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'admin' && password === 'admin123') {
+                window.location.href = 'admin.html';
+            } else {
+                alert('Invalid username or password');
+            }
+        }
+    </script>
+
+</body>
+</html>
